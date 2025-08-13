@@ -27,6 +27,7 @@ lightSwitch.addEventListener('change', function() {
         body.style.backgroundColor = '#000000'; // fundo preto
         statusText.textContent = 'Luz Apagada';
         messageText.style.display = 'block';
+        messageText.style.color = '#8B3A3A'; // ← cor da frase no escuro
         title.style.display = 'none';
         
         // volta fundo preto
