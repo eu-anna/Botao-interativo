@@ -42,11 +42,11 @@ h1 {
 /* Lâmpada bonita */
 .lamp {
     width: 120px;
-    height: 120px;
+    height: 160px;
     margin: 0 auto 20px;
     border-radius: 50%;
     background-color: #ffeb3b;
-    box-shadow: 0 0 50px #ffeb3b;
+    box-shadow: 0 0 15px #ffeb3b;
     position: relative;
     transition: all 0.5s ease;
     animation: swing 2s infinite ease-in-out, fadeIn 1s ease-in-out;
