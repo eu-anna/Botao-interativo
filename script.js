@@ -16,6 +16,7 @@ lightSwitch.addEventListener('change', function() {
         messageText.style.display = 'none';
         title.style.display = 'block';
         removeStars();
+        starfield.style.display = 'none'; // <- ESCONDE O CÉU ESTRELADO
         lamp.style.animation = "swing 2s infinite ease-in-out, fadeIn 1s ease-in-out";
     } else {
         // Luz apagada
@@ -24,9 +25,11 @@ lightSwitch.addEventListener('change', function() {
         statusText.textContent = 'Luz Apagada';
         messageText.style.display = 'block';
         title.style.display = 'none';
+        starfield.style.display = 'block'; // <- MOSTRA O CÉU ESTRELADO
         createStars();
     }
 });
+
 
 function createStars() {
     removeStars();
