@@ -1,0 +1,193 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* fundo branco quando acesa */
+    transition: background-color 0.5s ease;
+    color: #333;
+}
+
+/* Céu estrelado */
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 0;
+}
+
+/* Container da interface */
+.container {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Lâmpada bonita */
+.lamp {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #ffeb3b;
+    box-shadow: 0 0 50px #ffeb3b;
+    position: relative;
+    transition: all 0.5s ease;
+    animation: swing 2s infinite ease-in-out, fadeIn 1s ease-in-out;
+}
+
+/* Lâmpada desligada */
+.lamp.off {
+    display: none;
+    animation: none;
+}
+
+/* Reflexos da lâmpada com glow */
+.bulb-reflections {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    animation: glow 2s infinite alternate;
+}
+
+/* Base e thread da lâmpada */
+.bulb-base {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 20px;
+    background-color: #616161;
+    border-radius: 5px 5px 0 0;
+}
+
+.bulb-thread {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 15px;
+    background-color: #9E9E9E;
+}
+
+/* Animações da lâmpada */
+@keyframes swing {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+@keyframes glow {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+    100% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 68px;
+    margin: 20px 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 52px;
+    width: 52px;
+    left: 8px;
+    bottom: 8px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(52px);
+}
+
+/* Status da luz */
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Instruções */
+.instructions {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Mensagem especial */
+.message {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    display: none;
+    text-shadow: 0 0 5px white, 0 0 10px #4CAF50;
+}
+
+/* Estrelas */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 5px 1px rgba(255,255,255,0.8);
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
