@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interruptor de Luz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Céu estrelado -->
+    <div id="starfield"></div>
+
+    <div class="container">
+        <h1>Interruptor de Luz</h1>
+
+        <div class="lamp off">
+            <div class="bulb-reflections"></div>
+            <div class="bulb-thread"></div>
+            <div class="bulb-base"></div>
+        </div>
+
+        <!-- Frase acima do botão -->
+        <div class="message" id="messageText">
+            Você ilumina mais que meu celular no modo noturno!
+        </div>
+
+        <label class="switch">
+            <input type="checkbox" id="lightSwitch">
+            <span class="slider"></span>
+        </label>
+
+        <div class="status" id="statusText">Luz Apagada</div>
+
+        <p class="instructions">
+            Clique no interruptor para ligar/desligar a luz.<br>
+            Observe a mudança no ambiente ao redor.
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
