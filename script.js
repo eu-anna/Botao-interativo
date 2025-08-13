@@ -11,24 +11,31 @@ lightSwitch.addEventListener('change', function() {
     if(this.checked) {
         // Luz acesa
         lamp.classList.remove('off');
-        body.style.backgroundColor = '#ffffff'; // fundo branco
+        body.style.backgroundColor = '#ffffff'; // fundo branco real
         statusText.textContent = 'Luz Acesa';
         messageText.style.display = 'none';
         title.style.display = 'block';
         removeStars();
-        starfield.style.display = 'none'; // <- ESCONDE O CÉU ESTRELADO
+
+        // Aqui forçamos o fundo transparente
+        document.getElementById('starfield').style.backgroundColor = 'transparent';
+
         lamp.style.animation = "swing 2s infinite ease-in-out, fadeIn 1s ease-in-out";
     } else {
         // Luz apagada
         lamp.classList.add('off');
-        body.style.backgroundColor = '#000'; // fundo preto
+        body.style.backgroundColor = '#000000'; // fundo preto
         statusText.textContent = 'Luz Apagada';
         messageText.style.display = 'block';
         title.style.display = 'none';
-        starfield.style.display = 'block'; // <- MOSTRA O CÉU ESTRELADO
+        
+        // volta fundo preto
+        document.getElementById('starfield').style.backgroundColor = '#000000';
+
         createStars();
     }
 });
+
 
 
 function createStars() {
