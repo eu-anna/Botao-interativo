@@ -11,7 +11,7 @@ lightSwitch.addEventListener('change', function() {
     if(this.checked) {
         // Luz acesa
         lamp.classList.remove('off');
-        body.style.backgroundColor = '#f5f5f5'; // fundo branco
+        body.style.backgroundColor = '#ffffff'; // fundo branco
         statusText.textContent = 'Luz Acesa';
         messageText.style.display = 'none';
         title.style.display = 'block';
